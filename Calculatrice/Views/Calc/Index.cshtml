@@ -1,0 +1,55 @@
+﻿@model Calculatrice.Models.calc
+@{
+    ViewBag.Title = "Index";
+}
+
+<html>
+<head>
+
+    <div class="from-group">
+        <label for="La nouvelle calculatrice est là">Ma nouvelle calculatrice</label>
+    </div>
+    <style>
+        h2 {
+            font-family: "Times New Roman", Georgia, Serif;
+            background-color: orangered;
+        }
+    </style>
+</head>
+<style>
+    body {
+        background-color: slategrey;
+    }
+</style>
+
+<body>
+    <h2> 
+        This is my calculatrice
+    </h2>
+
+
+
+    <diV class="row">
+        @using (Html.BeginForm("/Index", "calc", FormMethod.Post))
+        {
+            <div class="fom-group">
+                <label for="number_1">Premier nombre</label>
+                <input type="text" class="form-control" id="number_1" name="number_1" value="@Model.number_1" />
+            </div>
+            <div class="fom-group">
+                <label for="number_2">deuxième nombre</label>
+                <input type="text" class="form-control" id="number_2" name="number_2" value="@Model.number_2" />
+            </div>
+            <div class="fom-group">
+                <label for="result"> Total </label>
+                <input type="text" class="form-control" id="result" name="result" value="@Model.result" />
+            </div>
+     <button type="submit" class="btn btn-warning" id="add" value="add" name="calculate">+</button>
+     <button type="submit" class="btn btn-danger" id="min" value="min" name="calculate">-</button>
+     <button type="submit" class="btn btn-info" id="sub" value="sub" name="calculate">*</button>
+     <button type="submit" class="btn btn-group" id="divv" value="divv" name="calculate">/</button>
+        }
+    </diV>
+</body>
+</html>
+
